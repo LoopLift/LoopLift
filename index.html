@@ -19,6 +19,20 @@
             color: white;
             padding: 40px 20px 20px;
             text-align: center;
+            position: relative;
+        }
+        .promo-banner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #FFB300;
+            color: #662D91;
+            text-align: center;
+            padding: 8px 0;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         header img {
             width: 120px;
@@ -173,9 +187,23 @@
     </style>
 </head>
 <body>
-<!-- Your original content remains intact without testimonials or demo video -->
+<div class="promo-banner">⚡ First 10 clients get 25% off their first month! ⚡</div>
+<header>
+    <img src="LoopLift_Logo.png" alt="LoopLift Logo">
+    <h1>LoopLift</h1>
+    <p>Teen Content Coach for Small Businesses</p>
+</header>
+
+<nav>
+    <a href="#about">📖 About</a>
+    <a href="#features">✨ Features</a>
+    <a href="#plans">💸 Plans</a>
+    <a href="#contact">🚀 Contact</a>
+</nav>
+<!-- Rest of your existing content goes here... -->
 </body>
 </html>
+
 
 <script>
   const faders = document.querySelectorAll('.fade-in');
