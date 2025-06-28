@@ -5,17 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>LoopLift – Teen Content Coach for Small Biz</title>
     <style>
-       .fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
         body {
             font-family: 'Segoe UI', sans-serif;
             margin: 0;
@@ -23,6 +12,7 @@
             background: #fffaf5;
             color: #333;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
         header {
             background: linear-gradient(135deg, #662D91, #FFB300);
@@ -46,6 +36,9 @@
             background: white;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 999;
         }
         nav a {
             display: inline-block;
@@ -54,6 +47,21 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #FFB300;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .hero {
             padding: 60px 20px;
@@ -92,6 +100,11 @@
             box-shadow: 0 1px 5px rgba(0,0,0,0.1);
             width: 250px;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         .plans-grid {
             display: flex;
@@ -107,6 +120,11 @@
             width: 300px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .plan:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
         .plan h3 {
             color: #FF9900;
@@ -142,6 +160,9 @@
             font-size: 16px;
             cursor: pointer;
         }
+        button:hover {
+            background: #4e2070;
+        }
         footer {
             background: #662D91;
             color: white;
@@ -151,6 +172,11 @@
         }
     </style>
 </head>
+<body>
+<!-- Your original content remains intact without testimonials or demo video -->
+</body>
+</html>
+
 <script>
   const faders = document.querySelectorAll('.fade-in');
 
