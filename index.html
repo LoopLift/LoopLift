@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>LoopLift – Teen Content Coach for Small Biz</title>
     <style>
+       .fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
         body {
             font-family: 'Segoe UI', sans-serif;
             margin: 0;
@@ -140,7 +151,26 @@
         }
     </style>
 </head>
-<body>
+<script>
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+</script>
+
+    <body>
 
     <header>
         <img src="LoopLift_Logo.png" alt="LoopLift Logo">
@@ -228,6 +258,14 @@
             </div>
         </div>
 <section class="how-it-works">
+  <h2 style="text-align:center; color:#662D91;">How It Works</h2>
+  <ol style="max-width: 700px; margin: auto; font-size: 18px;">
+    <li><strong>Step 1:</strong> Fill out our short Google Form</li>
+    <li><strong>Step 2:</strong> We review your biz and create content ideas just for you</li>
+    <li><strong>Step 3:</strong> You receive your plan within a few days, ready to post!</li>
+  </ol>
+</section>
+<section class="how-it-works fade-in">
   <h2 style="text-align:center; color:#662D91;">How It Works</h2>
   <ol style="max-width: 700px; margin: auto; font-size: 18px;">
     <li><strong>Step 1:</strong> Fill out our short Google Form</li>
